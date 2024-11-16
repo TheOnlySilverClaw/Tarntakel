@@ -15,8 +15,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         waypointIndex = 0;
         localScale = transform.localScale;
-        targetPosition = waypoints[0].transform.position;
-        UpdateTargetPosition();
+        SetTarget(waypoints[0]);
     }
 
     // Update is called once per frame
@@ -39,15 +38,20 @@ public class NewBehaviourScript : MonoBehaviour
             if(waypointIndex == waypoints.Length) {
                 waypointIndex = 0;
             }
-            targetPosition = waypoints[waypointIndex].transform.position;
+            SetTarget(waypoints[waypointIndex]);
+        }
+    }
 
-            Vector3 direction = transform.position - targetPosition;
-            transform.right = direction;
+    void SetTarget(GameObject target) {
 
-            if(direction.y < 0) {
-                Vector3 flipped = new Vector3(localScale.x, -localScale.y, localScale.z);
-                transform.localScale = flipped;
-            }
+        targetPosition = target.transform.position;
+
+        Vector3 direction = transform.position - targetPosition;
+        transform.right = direction;
+
+        if(direction.y > 0) {
+            Vector3 flipped = new Vector3(localScale.x, -localScale.y, localScale.z);
+            transform.localScale = flipped;
         }
     }
 }
