@@ -24,7 +24,7 @@ public class HueShift : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _currentHue += _currentHueIntent * _hueShiftSpeed;
+        _currentHue += _currentHueIntent * _hueShiftSpeed * Time.deltaTime;
         if (_currentHue > 1f)
         {
             _currentHue -= 1f;
