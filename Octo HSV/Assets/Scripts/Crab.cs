@@ -17,14 +17,11 @@ public class Crab : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("crab x " + transform.position.x);
-
         if(transform.position.x > rightLimit) {
             moveRight = false;
         } else if(transform.position.x < leftLimit) {
             moveRight = true;
         }
-        Debug.Log("move right: " + moveRight);
         transform.position += Vector3.right * Time.deltaTime * (moveRight ? speed : -speed);
     }
 }
