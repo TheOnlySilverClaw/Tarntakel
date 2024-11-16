@@ -6,23 +6,37 @@ public class DetectPlayer : MonoBehaviour
 {
     [SerializeField]
     private FloatAttribute _visibility;
+
     [SerializeField]
     private AnimationCurve _xScale;
+
     [SerializeField]
     private AnimationCurve _yScale;
 
-    private void Update()
+    void Update()
     {
         float x = _xScale.Evaluate(_visibility.Value);
         float y = _yScale.Evaluate(_visibility.Value);
         transform.localScale = new Vector3(x, y, 1f);
     }
-    void OnCollisionStay2D(Collision2D collision) {
 
-        GameObject target = collision.collider.gameObject;
+    void OnTriggerStay2D(Collider2D collider) {
+
+        Debug.Log("trigger " + collider);
+        
+        GameObject target = collider.gameObject;
         if(target.tag == "Player") {
             GameObject parent = transform.parent.gameObject;
-            parent.SendMessage("SetTarget", target);
+            parent.SendMessage("FollowPlayer", target);
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collider) {
+
+        GameObject target = collider.gameObject;
+        if(target.tag == "Player") {
+            GameObject parent = transform.parent.gameObject;
+            parent.SendMessage("IgnorePlayer");
         }
     }
 }
