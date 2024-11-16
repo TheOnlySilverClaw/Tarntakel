@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using static UnityEngine.InputSystem.InputAction;
 
 public class HueShift : MonoBehaviour
@@ -8,6 +9,8 @@ public class HueShift : MonoBehaviour
     [SerializeField]
     private SpriteRenderer _spriteRenderer;
 
+    public UnityEvent<float> OnUpdate;
+
     private float _currentHueIntent;
     private float _currentHue;
 
@@ -15,12 +18,13 @@ public class HueShift : MonoBehaviour
     void Start()
     {
         Color.RGBToHSV(_spriteRenderer.color, out _currentHue, out float _s, out float _v);
+        OnUpdate?.Invoke(_currentHue);
     }
 
     // Update is called once per frame
     void Update()
     {
-        _currentHue += _currentHueIntent * _hueShiftSpeed;
+        _currentHue += _currentHueIntent * _hueShiftSpeed * Time.deltaTime;
         if (_currentHue > 1f)
         {
             _currentHue -= 1f;
@@ -29,6 +33,7 @@ public class HueShift : MonoBehaviour
         {
             _currentHue += 1f;
         }
+        OnUpdate?.Invoke(_currentHue);
         _spriteRenderer.color = Color.HSVToRGB(_currentHue, 1f, 1f);
     }
 
