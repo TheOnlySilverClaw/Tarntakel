@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 38815bdbcaa9c0c6b98beebb76961bfa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -118,7 +118,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.09, y: -0.09}
-  m_Size: {x: 2.05, y: 1.13}
+  m_Size: {x: 4, y: 2.2}
   m_Direction: 1
 --- !u!1 &4824884764868426655
 GameObject:
@@ -181,6 +181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7018676927476931791}
   - component: {fileID: 1755314328381951627}
+  - component: {fileID: 7293932710973881544}
   m_Layer: 0
   m_Name: SharkViewCone
   m_TagString: Untagged
@@ -197,8 +198,8 @@ Transform:
   m_GameObject: {fileID: 7226476907263934992}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.47, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2227181196575495762}
@@ -244,14 +245,88 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 050aaee60bab474449e2aca06af1f249, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5019608}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &7293932710973881544
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7226476907263934992}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 1, y: 0.5}
+    oldSize: {x: 1, y: 2}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.12, y: -0.13}
+      - {x: -0.06, y: -0.06}
+      - {x: -0.03, y: 0.01}
+      - {x: -0.06, y: 0.07}
+      - {x: -0.14999999, y: 0.19}
+      - {x: -0.52, y: 0.66999996}
+      - {x: -0.58, y: 0.76}
+      - {x: -0.66999996, y: 0.87}
+      - {x: -0.7, y: 0.87}
+      - {x: -0.78999996, y: 0.76}
+      - {x: -0.84, y: 0.65}
+      - {x: -0.89, y: 0.51}
+      - {x: -0.90999997, y: 0.42999998}
+      - {x: -0.94, y: 0.26999998}
+      - {x: -0.95, y: 0.19}
+      - {x: -0.95, y: 0.02}
+      - {x: -0.96, y: 0}
+      - {x: -0.95, y: -0.01}
+      - {x: -0.95, y: -0.17999999}
+      - {x: -0.93, y: -0.32999998}
+      - {x: -0.89, y: -0.51}
+      - {x: -0.84, y: -0.64}
+      - {x: -0.78999996, y: -0.75}
+      - {x: -0.74, y: -0.81}
+      - {x: -0.69, y: -0.85999995}
+      - {x: -0.66999996, y: -0.85999995}
+      - {x: -0.59999996, y: -0.78999996}
+      - {x: -0.19, y: -0.22}
+      - {x: -0.14999999, y: -0.17}
+  m_UseDelaunayMesh: 0
