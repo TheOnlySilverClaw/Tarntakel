@@ -8,6 +8,8 @@ public class Movement : MonoBehaviour
 {
     [SerializeField]
     private float _movementSpeed;
+    [SerializeField]
+    private Animator _animator;
 
     /// <summary>
     /// Movement intent is already normalized
@@ -23,6 +25,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        bool isMoving = _movementIntent.sqrMagnitude > 0.1f;
+        _animator.SetBool("isMoving", isMoving);
         transform.position += new Vector3(_movementIntent.x, _movementIntent.y) * _movementSpeed * Time.deltaTime;
     }
 
