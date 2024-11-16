@@ -38,29 +38,21 @@ public class NewBehaviourScript : MonoBehaviour
     }
 
     void SetTarget(GameObject target) {
-
         targetPosition = target.transform.position;
-
         Vector3 direction = targetPosition - transform.position;
         transform.right = direction;
-
         Debug.Log("direction: " + direction + " magnitude " + direction.magnitude);
 
-        Vector3 localScale;
-        
-        if(direction.x > 0) {
-            localScale = transform.localScale;
-            Debug.Log("flip x");
-            transform.Rotate(new Vector3(0, 180, 0));
-            // Vector3 flipped = new Vector3(-localScale.x, localScale.y, localScale.z);
-            // transform.localScale = flipped;
+        Vector3 localScale = transform.localScale;
+        if(direction.x < 0) {
+            localScale.x = 1;
+            Debug.Log("rotate x");
+            transform.Rotate(0f, 0f, 180f);
         }
-
-        // localScale = transform.localScale;
-        // if(direction.y > 0) {
-        //     Debug.Log("flip y");
-        //     Vector3 flipped = new Vector3(localScale.x, -localScale.y, localScale.z);
-        //     transform.localScale = flipped;
-        // }
+        if(direction.x > 0){
+            Debug.Log("flip x");
+            localScale.x = -1;
+        }
+        transform.localScale =localScale;
     }
 }
