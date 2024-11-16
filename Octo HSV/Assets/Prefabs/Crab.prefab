@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3266520334601264293}
   - component: {fileID: 3961944310235738926}
+  - component: {fileID: 6851974502741462187}
   m_Layer: 0
   m_Name: Crab
   m_TagString: Untagged
@@ -49,6 +50,27 @@ MonoBehaviour:
   speed: 2
   rightLimit: 5
   leftLimit: -5
+--- !u!95 &6851974502741462187
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992229976882504641}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 223ebdf88d815c04f84199b315835fd9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6502327818139590117
 GameObject:
   m_ObjectHideFlags: 0
