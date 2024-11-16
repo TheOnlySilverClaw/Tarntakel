@@ -8,21 +8,20 @@ public class HueShiftDemo : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     [SerializeField]
     private float _hueChangingSpeed = 0.5f;
-
+    [SerializeField]
     private float _currentHue = 0f;
 
     private void Update()
     {
         _currentHue += _hueChangingSpeed * Time.deltaTime;
-        float value = _currentHue;
-        if (value > 1f)
+        if (_currentHue > 1f)
         {
-            value -= 1f;
+            _currentHue -= 1f;
         }
-        if (value < 0f)
+        if (_currentHue < 0f)
         {
-            value += 1f;
+            _currentHue += 1f;
         }
-        _spriteRenderer.color = Color.HSVToRGB(value, 1f, 1f);
+        _spriteRenderer.color = Color.HSVToRGB(_currentHue, 1f, 1f);
     }
 }
