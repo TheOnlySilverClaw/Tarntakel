@@ -5,7 +5,7 @@ using UnityEngine;
 public class Moray : MonoBehaviour
 {
     public GameObject home;
-    public float speed = 6f;
+    public float speed = 7f;
 
     private Vector3 targetPosition;
 

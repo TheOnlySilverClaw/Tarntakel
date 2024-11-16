@@ -38,7 +38,7 @@ public class NewBehaviourScript : MonoBehaviour
     void SetTarget(GameObject target) {
 
         targetPosition = target.transform.position;
-        
+
         Vector3 direction = targetPosition - transform.position;
         transform.right = direction;
 
@@ -54,10 +54,12 @@ public class NewBehaviourScript : MonoBehaviour
     }
 
     public void FollowPlayer(GameObject player) {
+        Debug.Log("follow player");
         SetTarget(player);
     }
 
     public void IgnorePlayer() {
+        Debug.Log("ignore player");
         SetTarget(waypoints[waypointIndex]);
     }
 }
