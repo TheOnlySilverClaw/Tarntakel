@@ -56,12 +56,10 @@ public class Moray : MonoBehaviour
     }
 
     public void FollowPlayer(GameObject player) {
-        Debug.Log("follow player " + player.transform.position);
         SetTarget(player);
     }
 
     public void IgnorePlayer() {
-        Debug.Log("ignore player");
         SetTarget(home);
     }
 }

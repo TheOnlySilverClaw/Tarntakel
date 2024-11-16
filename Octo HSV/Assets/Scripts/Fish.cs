@@ -7,7 +7,7 @@ public class NewBehaviourScript : MonoBehaviour
     public GameObject[] waypoints;
     public float speed = 5f;
     private int waypointIndex;
-    private Vector3 targetPosition;
+    private GameObject target;
     private Vector3 localScale;
 
     void Start()
@@ -21,11 +21,12 @@ public class NewBehaviourScript : MonoBehaviour
 
         UpdateTargetPosition();
         transform.position = Vector3.MoveTowards(
-            transform.position, targetPosition, Time.deltaTime * speed);
+            transform.position, target.transform.position, Time.deltaTime * speed);
     }
 
     void UpdateTargetPosition() {
 
+        Vector3 targetPosition = target.transform.position;
         if(Vector3.Distance(transform.position, targetPosition) < 1.0f) {
             waypointIndex++;
             if(waypointIndex == waypoints.Length) {
@@ -37,9 +38,9 @@ public class NewBehaviourScript : MonoBehaviour
 
     void SetTarget(GameObject target) {
 
-        targetPosition = target.transform.position;
+        this.target = target;
 
-        Vector3 direction = targetPosition - transform.position;
+        Vector3 direction = target.transform.position - transform.position;
         transform.right = direction;
 
         Vector3 localScale = transform.localScale;
@@ -54,12 +55,10 @@ public class NewBehaviourScript : MonoBehaviour
     }
 
     public void FollowPlayer(GameObject player) {
-        Debug.Log("follow player");
         SetTarget(player);
     }
 
     public void IgnorePlayer() {
-        Debug.Log("ignore player");
         SetTarget(waypoints[waypointIndex]);
     }
 }
