@@ -14,7 +14,6 @@ public class NewBehaviourScript : MonoBehaviour
     void Start()
     {
         waypointIndex = 0;
-        localScale = transform.localScale;
         SetTarget(waypoints[0]);
     }
 
@@ -23,10 +22,6 @@ public class NewBehaviourScript : MonoBehaviour
     {
 
         UpdateTargetPosition();
-        // Quaternion lookTarget = Quaternion.LookRotation(direction, Vector3.forward);
-        // Quaternion rotation = Quaternion.Slerp(
-        //     transform.rotation, lookTarget, 0.1f);
-        // transform.rotation = rotation;
         transform.position = Vector3.MoveTowards(
             transform.position, targetPosition, Time.deltaTime * speed);
     }
@@ -46,12 +41,26 @@ public class NewBehaviourScript : MonoBehaviour
 
         targetPosition = target.transform.position;
 
-        Vector3 direction = transform.position - targetPosition;
+        Vector3 direction = targetPosition - transform.position;
         transform.right = direction;
 
-        if(direction.y > 0) {
-            Vector3 flipped = new Vector3(localScale.x, -localScale.y, localScale.z);
-            transform.localScale = flipped;
+        Debug.Log("direction: " + direction + " magnitude " + direction.magnitude);
+
+        Vector3 localScale;
+        
+        if(direction.x > 0) {
+            localScale = transform.localScale;
+            Debug.Log("flip x");
+            transform.Rotate(new Vector3(0, 180, 0));
+            // Vector3 flipped = new Vector3(-localScale.x, localScale.y, localScale.z);
+            // transform.localScale = flipped;
         }
+
+        // localScale = transform.localScale;
+        // if(direction.y > 0) {
+        //     Debug.Log("flip y");
+        //     Vector3 flipped = new Vector3(localScale.x, -localScale.y, localScale.z);
+        //     transform.localScale = flipped;
+        // }
     }
 }
