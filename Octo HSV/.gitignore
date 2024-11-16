@@ -1,3 +1,9 @@
 [Ll]ibrary/
 [Ll]ogs/
 [Tt]emp/
+[Uu]ser[Ss]ettings/
+
+*.sln
+*.csproj
+
+.vs/
