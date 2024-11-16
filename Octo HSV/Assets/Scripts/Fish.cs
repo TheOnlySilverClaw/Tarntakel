@@ -41,16 +41,13 @@ public class NewBehaviourScript : MonoBehaviour
         targetPosition = target.transform.position;
         Vector3 direction = targetPosition - transform.position;
         transform.right = direction;
-        Debug.Log("direction: " + direction + " magnitude " + direction.magnitude);
 
         Vector3 localScale = transform.localScale;
         if(direction.x < 0) {
             localScale.x = 1;
-            Debug.Log("rotate x");
             transform.Rotate(0f, 0f, 180f);
         }
         if(direction.x > 0){
-            Debug.Log("flip x");
             localScale.x = -1;
         }
         transform.localScale =localScale;
