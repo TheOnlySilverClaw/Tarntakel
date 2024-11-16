@@ -29,7 +29,7 @@ public class HueShift : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Color.RGBToHSV(_spriteRenderer.color, out _currentHue, out float _s, out float _v);
+        Color.RGBToHSV(_spriteRenderer.color, out _currentHue, out _, out _);
         OnUpdate?.Invoke(_currentHue);
         _deviation.Value = 1f;
     }

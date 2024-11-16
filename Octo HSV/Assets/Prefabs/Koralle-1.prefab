@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hue: 0.1222222
+  _spriteRenderer: {fileID: 484163265939252663}
 --- !u!60 &2474150071502162945
 PolygonCollider2D:
   m_ObjectHideFlags: 0

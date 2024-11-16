@@ -10,14 +10,12 @@ public class NewBehaviourScript : MonoBehaviour
     private Vector3 targetPosition;
     private Vector3 localScale;
 
-    // Start is called before the first frame update
     void Start()
     {
         waypointIndex = 0;
         SetTarget(waypoints[0]);
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -40,25 +38,19 @@ public class NewBehaviourScript : MonoBehaviour
     void SetTarget(GameObject target) {
 
         targetPosition = target.transform.position;
-
+        
         Vector3 direction = targetPosition - transform.position;
         transform.right = direction;
 
-        Vector3 localScale;
-        
-        if(direction.x > 0) {
-            localScale = transform.localScale;
-            transform.Rotate(new Vector3(0, 180, 0));
-            // Vector3 flipped = new Vector3(-localScale.x, localScale.y, localScale.z);
-            // transform.localScale = flipped;
+        Vector3 localScale = transform.localScale;
+        if(direction.x < 0) {
+            localScale.x = 1;
+            transform.Rotate(0f, 0f, 180f);
         }
-
-        // localScale = transform.localScale;
-        // if(direction.y > 0) {
-        //     Debug.Log("flip y");
-        //     Vector3 flipped = new Vector3(localScale.x, -localScale.y, localScale.z);
-        //     transform.localScale = flipped;
-        // }
+        if(direction.x > 0){
+            localScale.x = -1;
+        }
+        transform.localScale =localScale;
     }
 
     public void FollowPlayer(GameObject player) {
