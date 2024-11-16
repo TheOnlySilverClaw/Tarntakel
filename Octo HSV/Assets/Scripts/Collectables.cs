@@ -4,5 +4,7 @@ using UnityEngine;
 
 public class Collectables : MonoBehaviour
 {
-    
+    private void OnTriggerEnter(Collider other){
+        Debug.Log("Collectable collected");
+    }
 }
