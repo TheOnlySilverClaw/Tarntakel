@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour
     private float _movementSpeed;
     [SerializeField]
     private Animator _animator;
+    private bool facingLeft;
 
     /// <summary>
     /// Movement intent is already normalized
@@ -28,10 +29,22 @@ public class Movement : MonoBehaviour
         bool isMoving = _movementIntent.sqrMagnitude > 0.1f;
         _animator.SetBool("isMoving", isMoving);
         transform.position += new Vector3(_movementIntent.x, _movementIntent.y) * _movementSpeed * Time.deltaTime;
+        orientation();
     }
 
     public void Move(CallbackContext context)
     {
         _movementIntent = context.ReadValue<Vector2>();
+    }
+
+    private void orientation(){
+        Vector3 scale = transform.localScale;
+        if(!facingLeft && _movementIntent.x < 0){
+            scale.x *= -1;
+            facingLeft = true;}
+        if(facingLeft && _movementIntent.x > 0){
+            scale.x *= -1;
+            facingLeft = false;}
+        transform.localScale = scale;
     }
 }
