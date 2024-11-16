@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 313175ac47818d04f87000512ce6b40c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3727504fb19058f44b5ea740b74a27a2, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -118,7 +118,8 @@ GameObject:
   - component: {fileID: 3357292178870608911}
   - component: {fileID: 8715622411875037319}
   - component: {fileID: 1569279196300909174}
-  - component: {fileID: 265691022295591935}
+  - component: {fileID: 5217105690471937953}
+  - component: {fileID: 1138280181738971069}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -280,6 +281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hueShiftSpeed: 1
   _spriteRenderer: {fileID: 8931256121453398765}
+  _collider: {fileID: 5217105690471937953}
   OnUpdate:
     m_PersistentCalls:
       m_Calls:
@@ -295,7 +297,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!70 &265691022295591935
+  _currentHue: 0
+  _visibility:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.05
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _deviation: {fileID: 11400000, guid: ff2a578f7fdfb404e82f120c560fd8f1, type: 2}
+--- !u!70 &5217105690471937953
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -327,6 +364,33 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.02}
-  m_Size: {x: 1.66, y: 2.01}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1.62, y: 1.97}
   m_Direction: 0
+--- !u!50 &1138280181738971069
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2455448048441600255}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 1
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
