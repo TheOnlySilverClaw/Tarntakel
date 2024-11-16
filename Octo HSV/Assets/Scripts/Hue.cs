@@ -7,18 +7,31 @@ public class Hue : MonoBehaviour
     [SerializeField]
     private float _hue;
 
+    [SerializeField]
+    private SpriteRenderer _spriteRenderer;
+    private float _hueOffset;
+
     public float Value
     {
         get
         {
-            return _hue;
+            float value = _hue + _hueOffset;
+            if (value > 1f)
+            {
+                value -= 1f;
+            }
+            if (value < 0f)
+            {
+                value += 1f;
+            }
+            return value;
         }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Color.RGBToHSV(_spriteRenderer.color, out _hueOffset, out _, out _);
     }
 
     // Update is called once per frame

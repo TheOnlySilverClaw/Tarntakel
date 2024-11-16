@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6132853092489448337}
   - component: {fileID: 6688545807620723069}
-  - component: {fileID: 5199701097506662350}
   - component: {fileID: 1796210993168803000}
+  - component: {fileID: 5199701097506662350}
   m_Layer: 0
   m_Name: Koralle-2
   m_TagString: Untagged
@@ -86,6 +86,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1796210993168803000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7095825731668672224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eb8490951332274f9a57db210eba999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hue: 0.07222223
+  _spriteRenderer: {fileID: 6688545807620723069}
 --- !u!60 &5199701097506662350
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -148,16 +162,3 @@ PolygonCollider2D:
       - {x: 0.48, y: 0.56}
       - {x: 0.48, y: 0.74}
   m_UseDelaunayMesh: 0
---- !u!114 &1796210993168803000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7095825731668672224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7eb8490951332274f9a57db210eba999, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _hue: 0.07222223
