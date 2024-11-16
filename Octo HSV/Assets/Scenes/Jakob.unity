@@ -146,6 +146,14 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[3]
       value: 
       objectReference: {fileID: 1051606120}
+    - target: {fileID: 1755314328381951627, guid: 4b5e25971854cd84786804c6b0599de1, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1755314328381951627, guid: 4b5e25971854cd84786804c6b0599de1, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2227181196575495762, guid: 4b5e25971854cd84786804c6b0599de1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.86

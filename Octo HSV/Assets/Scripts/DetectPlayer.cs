@@ -29,6 +29,7 @@ public class DetectPlayer : MonoBehaviour
             GameObject parent = transform.parent.gameObject;
             parent.SendMessage("FollowPlayer", target);
         }
+        gameObject.GetComponent<SpriteRenderer>().color = Color.HSVToRGB(0f, 1f, 1f);
     }
 
     void OnTriggerExit2D(Collider2D collider) {
@@ -40,5 +41,6 @@ public class DetectPlayer : MonoBehaviour
             GameObject parent = transform.parent.gameObject;
             parent.SendMessage("IgnorePlayer");
         }
+        gameObject.GetComponent<SpriteRenderer>().color = Color.HSVToRGB(0f, 0f, 1f);
     }
 }
