@@ -119,10 +119,10 @@ GameObject:
   - component: {fileID: 8715622411875037319}
   - component: {fileID: 1569279196300909174}
   - component: {fileID: 5217105690471937953}
-  - component: {fileID: 1138280181738971069}
+  - component: {fileID: 8123736388190380954}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -302,6 +302,24 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
+      time: -0.5
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: -0.05
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
       time: 0
       value: 0.5
       inSlope: 0
@@ -320,7 +338,7 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1
+      time: 0.5
       value: 1
       inSlope: 0
       outSlope: 0
@@ -367,7 +385,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.62, y: 1.97}
   m_Direction: 0
---- !u!50 &1138280181738971069
+--- !u!50 &8123736388190380954
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0

@@ -182,6 +182,7 @@ GameObject:
   - component: {fileID: 7018676927476931791}
   - component: {fileID: 1755314328381951627}
   - component: {fileID: 7293932710973881544}
+  - component: {fileID: 3258345853310882741}
   m_Layer: 0
   m_Name: SharkViewCone
   m_TagString: Untagged
@@ -330,3 +331,15 @@ PolygonCollider2D:
       - {x: -0.19, y: -0.22}
       - {x: -0.14999999, y: -0.17}
   m_UseDelaunayMesh: 0
+--- !u!114 &3258345853310882741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7226476907263934992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5409f00f037b42322a82507976251633, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
