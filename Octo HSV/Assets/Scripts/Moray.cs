@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UIElements;
 
 public class Moray : MonoBehaviour
@@ -11,6 +12,8 @@ public class Moray : MonoBehaviour
     private SpriteRenderer cone;
 
     private GameObject target;
+
+    public UnityEvent OnFollow;
 
     void Start()
     {
@@ -64,6 +67,7 @@ public class Moray : MonoBehaviour
     public void FollowPlayer(GameObject player) {
         SetTarget(player);
         cone.enabled = true;
+        OnFollow?.Invoke();
     }
 
     public void IgnorePlayer() {
