@@ -2,14 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class penguin : MonoBehaviour
 {
     public GameObject[] waypoints;
-    public float speed = 5f;
+    //public float[] speeds;
+    [SerializeField]
+    private AnimationCurve speedRange;
+    private float speed = 20;
     private int waypointIndex;
     private GameObject target;
-
-    void Start()
+    [SerializeField]
+    private ParticleSystem bubbles;
+       void Start()
     {
         waypointIndex = 0;
         SetTarget(waypoints[0]);
@@ -17,7 +21,6 @@ public class NewBehaviourScript : MonoBehaviour
 
     void Update()
     {
-
         UpdateTargetPosition();
         transform.position = Vector3.MoveTowards(
             transform.position, target.transform.position, Time.deltaTime * speed);
@@ -28,10 +31,14 @@ public class NewBehaviourScript : MonoBehaviour
         Vector3 targetPosition = target.transform.position;
         if(Vector3.Distance(transform.position, targetPosition) < 1.0f) {
             waypointIndex++;
+            speed = speedRange.Evaluate(waypointIndex);
             if(waypointIndex == waypoints.Length) {
                 waypointIndex = 0;
             }
             SetTarget(waypoints[waypointIndex]);
+            if(waypointIndex == 0){bubbles.Play();}
+            if(waypointIndex !=0){bubbles.Stop();}
+            
         }
     }
 
