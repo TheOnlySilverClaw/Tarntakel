@@ -43,7 +43,6 @@ public class Movement : MonoBehaviour
             direction.x * Random.value * 6000,
             direction.y * Random.value * 3000
         );
-        Debug.Log("force " + force);
         _rigidbody.AddForce(force);
     }
 

@@ -297,6 +297,17 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "negative",
+                    "id": "1470e734-60ee-4a30-8e8c-3f583da02cdc",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "ShiftHue",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "positive",
                     "id": "fed222a7-2d66-4ea7-929f-8502085c3438",
                     "path": "<Mouse>/scroll/up",
@@ -311,6 +322,17 @@
                     "name": "positive",
                     "id": "add51d2b-7da2-481d-b384-867d0560b42f",
                     "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "ShiftHue",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "9bb542da-b345-4903-89dd-a9b0b6c13faa",
+                    "path": "<Keyboard>/l",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
