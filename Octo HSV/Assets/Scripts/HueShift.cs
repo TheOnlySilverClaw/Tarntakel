@@ -97,7 +97,9 @@ public class HueShift : MonoBehaviour
         {
             _deviation.Value = 1f;
         }
-        _spriteRenderer.color = Color.HSVToRGB(_currentHue, 1f, 1f).WithAlpha(alpha);
+        Color color = Color.HSVToRGB(_currentHue, 1f, 1f);
+        color.a = alpha;
+        _spriteRenderer.color = color;
     }
 
     private void InterpolateCurentHue()
