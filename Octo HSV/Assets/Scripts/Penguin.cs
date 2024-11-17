@@ -5,15 +5,18 @@ using UnityEngine;
 public class penguin : MonoBehaviour
 {
     public GameObject[] waypoints;
-    //public float[] speeds;
+    public float timeBetweenActions;
+    private bool waiting;
+    private IEnumerator method;
     [SerializeField]
     private AnimationCurve speedRange;
     private float speed = 20;
-    private int waypointIndex;
+    public int waypointIndex;
     private GameObject target;
     [SerializeField]
-    private ParticleSystem bubbles;
-       void Start()
+    private ParticleSystem _bubbles;
+    
+    void Start()
     {
         waypointIndex = 0;
         SetTarget(waypoints[0]);
@@ -21,24 +24,28 @@ public class penguin : MonoBehaviour
 
     void Update()
     {
-        UpdateTargetPosition();
-        transform.position = Vector3.MoveTowards(
-            transform.position, target.transform.position, Time.deltaTime * speed);
+            if(!waiting){
+            UpdateTargetPosition();
+            transform.position = Vector3.MoveTowards(
+                transform.position, target.transform.position, Time.deltaTime * speed);
+            }
     }
 
     void UpdateTargetPosition() {
 
         Vector3 targetPosition = target.transform.position;
-        if(Vector3.Distance(transform.position, targetPosition) < 1.0f) {
-            waypointIndex++;
+        if(Vector3.Distance(transform.position, targetPosition) < 1.0f){
             speed = speedRange.Evaluate(waypointIndex);
-            if(waypointIndex == waypoints.Length) {
-                waypointIndex = 0;
+            if(waypointIndex == waypoints.Length){
+                speed = 0;
+                method = startPenguinCycle();
+                StartCoroutine(method);
+                waiting = true;
             }
-            SetTarget(waypoints[waypointIndex]);
-            if(waypointIndex == 0){bubbles.Play();}
-            if(waypointIndex !=0){bubbles.Stop();}
-            
+            if(waypointIndex != waypoints.Length) SetTarget(waypoints[waypointIndex]);
+            if(waypointIndex == 0){_bubbles.Play();}
+            if(waypointIndex !=0){_bubbles.Stop();}
+            waypointIndex++;
         }
     }
 
@@ -59,7 +66,6 @@ public class penguin : MonoBehaviour
         }
         transform.localScale =localScale;
     }
-
     public void FollowPlayer(GameObject player) {
         SetTarget(player);
     }
@@ -67,4 +73,11 @@ public class penguin : MonoBehaviour
     public void IgnorePlayer() {
         SetTarget(waypoints[waypointIndex]);
     }
+   
+   private IEnumerator startPenguinCycle(){
+        yield return new WaitForSeconds(timeBetweenActions);
+        waypointIndex = 0;
+        speed = speedRange.Evaluate(waypointIndex);
+        waiting = false;
+   } 
 }

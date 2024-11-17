@@ -84,7 +84,6 @@ public class HueShift : MonoBehaviour
         
         OnUpdate?.Invoke(_currentHue);
         float alpha = 1f;
-        Debug.Log("hiding "+ _currentHidingSpot);
         if(_currentHidingSpot != null)
         {
             float value = Mathf.Abs(_currentHidingSpot.Value - _currentHue);
