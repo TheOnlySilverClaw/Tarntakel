@@ -203,17 +203,17 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: 1
-      outSlope: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 2
-      inSlope: 1
-      outSlope: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -407,6 +407,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  timeBetweenActions: 2.5
   speedRange:
     serializedVersion: 2
     m_Curve:
@@ -458,7 +459,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 1
     m_RotationOrder: 4
-  bubbles: {fileID: 3381103551513381937}
+  waypointIndex: 0
+  _bubbles: {fileID: 3381103551513381937}
 --- !u!1001 &8882078180294277998
 PrefabInstance:
   m_ObjectHideFlags: 0
