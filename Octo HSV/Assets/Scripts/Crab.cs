@@ -5,8 +5,8 @@ using UnityEngine;
 public class Crab : MonoBehaviour
 {
     public float speed = 2f;
-    public float rightLimit;
-    public float leftLimit;
+    public GameObject rightLimit;
+    public GameObject leftLimit;
     bool moveRight;
 
     void Start()
@@ -17,11 +17,12 @@ public class Crab : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.x > rightLimit) {
+        if(transform.position.x > rightLimit.transform.position.x) {
             moveRight = false;
-        } else if(transform.position.x < leftLimit) {
+        } else if(transform.position.x < leftLimit.transform.position.x) {
             moveRight = true;
         }
-        transform.position += Vector3.right * Time.deltaTime * (moveRight ? speed : -speed);
+        float directedSpeed = (moveRight ? speed : -speed);
+        transform.position += Vector3.right * Time.deltaTime * directedSpeed;
     }
 }
