@@ -17,6 +17,10 @@ public class Crab : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(rightLimit == null ||  leftLimit == null)
+        {
+            return;
+        }
         if(transform.position.x > rightLimit.transform.position.x) {
             moveRight = false;
         } else if(transform.position.x < leftLimit.transform.position.x) {

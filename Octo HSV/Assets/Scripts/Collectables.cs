@@ -6,11 +6,18 @@ public class Collectables : MonoBehaviour
 {
     [SerializeField]
     private ParticleSystem disappearingPart;
+
+    private void Start()
+    {
+        Exit.Instance.Register();
+    }
+
     void OnTriggerEnter2D(Collider2D other){
+        Exit.Instance.Collect();
         collected();
     }
+
     public void collected(){
-        Debug.Log("coin collected");
         Destroy(this.gameObject);
         disappearingPart.Play();
         float playTime = disappearingPart.duration + disappearingPart.startLifetime;
