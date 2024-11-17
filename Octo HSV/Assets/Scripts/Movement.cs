@@ -35,6 +35,18 @@ public class Movement : MonoBehaviour
         orientation();
     }
 
+    public void Panic(GameObject source)
+    {
+        Vector3 direction = transform.position - source.transform.position;
+
+        Vector2 force = new Vector2(
+            direction.x * Random.value * 6000,
+            direction.y * Random.value * 3000
+        );
+        Debug.Log("force " + force);
+        _rigidbody.AddForce(force);
+    }
+
     public void Move(CallbackContext context)
     {
         _movementIntent = context.ReadValue<Vector2>();

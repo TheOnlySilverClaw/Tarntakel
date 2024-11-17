@@ -126,7 +126,7 @@ public class HueShift : MonoBehaviour
         _currentHueIntent = context.ReadValue<float>();
     }
 
-    public void Panic() {
+    public void Panic(GameObject source) {
         panicTime = 1f;
     }
 }

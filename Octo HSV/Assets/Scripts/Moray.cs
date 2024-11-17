@@ -6,6 +6,8 @@ public class Moray : MonoBehaviour
 {
     public GameObject home;
     public float speed = 7f;
+    [SerializeField]
+    private SpriteRenderer cone;
 
     private GameObject target;
 
@@ -57,9 +59,11 @@ public class Moray : MonoBehaviour
 
     public void FollowPlayer(GameObject player) {
         SetTarget(player);
+        cone.enabled = true;
     }
 
     public void IgnorePlayer() {
         SetTarget(home);
+        cone.enabled = false;
     }
 }

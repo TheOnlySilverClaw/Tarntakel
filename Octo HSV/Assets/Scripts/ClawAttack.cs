@@ -7,7 +7,7 @@ public class ClawAttack : MonoBehaviour
     void OnTriggerEnter2D(Collider2D target) {
         
         if(target.tag == "Player") {
-            target.SendMessage("Panic");
+            target.SendMessage("Panic", gameObject);
         }
     }
 }

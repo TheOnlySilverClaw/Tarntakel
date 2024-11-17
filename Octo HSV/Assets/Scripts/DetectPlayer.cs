@@ -21,13 +21,13 @@ public class DetectPlayer : MonoBehaviour
     }
 
     void OnTriggerStay2D(Collider2D collider) {
-
+        
         GameObject target = collider.gameObject;
         if(target.tag == "Player") {
             GameObject parent = transform.parent.gameObject;
             parent.SendMessage("FollowPlayer", target);
         }
-        gameObject.GetComponent<SpriteRenderer>().color = Color.HSVToRGB(0f, 1f, 1f);
+        changeColor(1f);
     }
 
     void OnTriggerExit2D(Collider2D collider) {
@@ -37,6 +37,12 @@ public class DetectPlayer : MonoBehaviour
             GameObject parent = transform.parent.gameObject;
             parent.SendMessage("IgnorePlayer");
         }
-        gameObject.GetComponent<SpriteRenderer>().color = Color.HSVToRGB(0f, 0f, 1f);
+        changeColor(0f);
+    }
+    private void changeColor(float Saturation){
+        Color color = gameObject.GetComponent<SpriteRenderer>().color;
+        color = Color.HSVToRGB(0f, Saturation, 1f);
+        color.a = 0.5f;
+        gameObject.GetComponent<SpriteRenderer>().color = color;
     }
 }
