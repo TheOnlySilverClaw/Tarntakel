@@ -11,6 +11,8 @@ public class Exit : MonoBehaviour
     private int _maxCollectables = 0;
 
     public UnityEvent OnWin;
+    public UnityEvent OnRegister;
+    public UnityEvent<int> OnCollect;
 
     public static Exit Instance
     {
@@ -23,10 +25,12 @@ public class Exit : MonoBehaviour
     public void Register()
     {
         _maxCollectables++;
+        OnRegister?.Invoke();
     }
 
     public void Collect()
     {
+        OnCollect?.Invoke(_collectables);
         _collectables++;
     }
 
