@@ -42,7 +42,7 @@ public class HueShift : MonoBehaviour
         if(panicTime > 0f) {
             panicTime -= Time.deltaTime;
             int round = (int) Mathf.Ceil(panicTime * 10f);
-            if(round % 5 == 0) {
+            if(round % 7 == 0) {
                 RandomizeCurrentHue();
             }
         } else {
@@ -127,6 +127,6 @@ public class HueShift : MonoBehaviour
     }
 
     public void Panic() {
-        panicTime = 0.5f;
+        panicTime = 1f;
     }
 }
