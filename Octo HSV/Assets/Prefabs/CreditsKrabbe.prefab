@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 578485957814259837}
   - component: {fileID: 7109352381077424756}
   - component: {fileID: 6829998561048781104}
+  - component: {fileID: 6093790481087246891}
   m_Layer: 0
   m_Name: CreditsKrabbe
   m_TagString: Untagged
@@ -76,6 +77,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!95 &6093790481087246891
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2924245878517751654}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6ab63f1a084670940a5404332b563eb0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6099312499642040182
 GameObject:
   m_ObjectHideFlags: 0
