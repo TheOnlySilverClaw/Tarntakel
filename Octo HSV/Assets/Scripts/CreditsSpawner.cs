@@ -14,7 +14,8 @@ public class CreditsSpawner : MonoBehaviour
         "Katrin Huber",
         "Joel Lacour",
         "Christopher Putz",
-        "Jakob Utters"
+        "Jakob Utters",
+        "Alexander Keinprecht"
     };
 
     public void RollCredits()
@@ -24,7 +25,7 @@ public class CreditsSpawner : MonoBehaviour
 
     private IEnumerator SpawnCrabs()
     {
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < _nameArray.Length; i++)
         {
             Instantiate(_crabPrefab, transform.position, Quaternion.identity)
                 .GetComponent<CreditCrab>()
