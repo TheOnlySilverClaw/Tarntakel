@@ -10,6 +10,8 @@ public class Movement : MonoBehaviour
     private float _movementSpeed;
     [SerializeField]
     private Animator _animator;
+    [SerializeField]
+    private Rigidbody2D _rigidbody;
     private bool facingLeft;
 
     /// <summary>
@@ -28,7 +30,8 @@ public class Movement : MonoBehaviour
     {
         bool isMoving = _movementIntent.sqrMagnitude > 0.1f;
         _animator.SetBool("isMoving", isMoving);
-        transform.position += new Vector3(_movementIntent.x, _movementIntent.y) * _movementSpeed * Time.deltaTime;
+        //transform.position += new Vector3(_movementIntent.x, _movementIntent.y) * _movementSpeed * Time.deltaTime;
+        _rigidbody.velocity = _movementIntent * _movementSpeed;
         orientation();
     }
 
