@@ -24,6 +24,8 @@ public class HueShift : MonoBehaviour
     [SerializeField]
     private FloatAttribute _deviation;
 
+    private float panicTime = 0f;
+
     private Hue _currentHidingSpot = null;
 
     // Start is called before the first frame update
@@ -37,6 +39,15 @@ public class HueShift : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(panicTime > 0f) {
+            panicTime -= Time.deltaTime;
+            int round = (int) Mathf.Ceil(panicTime * 10f);
+            if(round % 5 == 0) {
+                RandomizeCurrentHue();
+            }
+        } else {
+            InterpolateCurentHue();
+        }
         UpdateHue();
     }
 
@@ -66,17 +77,10 @@ public class HueShift : MonoBehaviour
         }
     }
 
-    private void UpdateHue()
-    {
-        _currentHue += _currentHueIntent * _hueShiftSpeed * Time.deltaTime;
-        if (_currentHue > 1f)
-        {
-            _currentHue -= 1f;
-        }
-        if (_currentHue < 0f)
-        {
-            _currentHue += 1f;
-        }
+    void UpdateHue() {
+
+        ClampCurrentHue();
+        
         OnUpdate?.Invoke(_currentHue);
         float alpha = 1f;
         if(_currentHidingSpot != null)
@@ -95,8 +99,34 @@ public class HueShift : MonoBehaviour
         _spriteRenderer.color = Color.HSVToRGB(_currentHue, 1f, 1f).WithAlpha(alpha);
     }
 
+    private void InterpolateCurentHue()
+    {
+        _currentHue += _currentHueIntent * _hueShiftSpeed * Time.deltaTime;
+    }
+
+    private void RandomizeCurrentHue() {
+        _currentHue += Random.value * 0.4f + 0.2f;
+    }
+
+    private void ClampCurrentHue() {
+        
+        if (_currentHue > 1f)
+        {
+            _currentHue -= 1f;
+        }
+
+        if (_currentHue < 0f)
+        {
+            _currentHue += 1f;
+        }
+    }
+
     public void ShiftHue(CallbackContext context)
     {
         _currentHueIntent = context.ReadValue<float>();
+    }
+
+    public void Panic() {
+        panicTime = 0.5f;
     }
 }
