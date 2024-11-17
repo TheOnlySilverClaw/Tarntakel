@@ -22,8 +22,6 @@ public class DetectPlayer : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collider) {
 
-        Debug.Log("trigger " + collider);
-        
         GameObject target = collider.gameObject;
         if(target.tag == "Player") {
             GameObject parent = transform.parent.gameObject;
@@ -34,8 +32,6 @@ public class DetectPlayer : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collider) {
 
-        Debug.Log("trigger exit");
-        
         GameObject target = collider.gameObject;
         if(target.tag == "Player") {
             GameObject parent = transform.parent.gameObject;
