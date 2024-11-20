@@ -1,13 +1,7 @@
-# hsv-octo
+# Tarntakel
 
-Setting
+Result of the Franken Game Jam 2024
 
-Meerwasser-Aquarium
-Licht im Hintergrund wechselt
+Play as a little octopus that has to find coins and survive by changing color.
 
-## Feinde
-
-- Pinguine (tauchen senkrecht)
-- Fische (bewegen sich waagegrecht)
-- Muränen (sind am Meeresboden)
-
+[<img src="screenshot.png">](https://tigerplush.itch.io/tarntakel)
