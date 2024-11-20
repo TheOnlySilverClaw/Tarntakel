@@ -275,11 +275,11 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "negative",
+                    "name": "Positive",
                     "id": "4f150e1c-ccf9-42d3-b244-8b3318715bbf",
                     "path": "<Mouse>/scroll/down",
                     "interactions": "",
-                    "processors": "Clamp(max=1)",
+                    "processors": "Clamp(max=4)",
                     "groups": ";Keyboard&Mouse",
                     "action": "ShiftHue",
                     "isComposite": false,
@@ -308,11 +308,11 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "positive",
+                    "name": "Negative",
                     "id": "fed222a7-2d66-4ea7-929f-8502085c3438",
                     "path": "<Mouse>/scroll/up",
                     "interactions": "",
-                    "processors": "Clamp(max=1)",
+                    "processors": "Clamp(max=4)",
                     "groups": ";Keyboard&Mouse",
                     "action": "ShiftHue",
                     "isComposite": false,
