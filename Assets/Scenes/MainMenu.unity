@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _crabPrefab: {fileID: 2924245878517751654, guid: 42edcafac8513d048a3cb57cb053f5aa, type: 3}
-  _timeBetweenCrabs: 1
+  _timeBetweenCrabs: 1.25
 --- !u!4 &53431778
 Transform:
   m_ObjectHideFlags: 0
