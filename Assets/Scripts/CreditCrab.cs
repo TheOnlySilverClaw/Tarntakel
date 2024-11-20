@@ -11,6 +11,7 @@ public class CreditCrab : MonoBehaviour
     public GameObject SetName(string name)
     {
         _text.text = name;
+        _text.color = new Color(0.16f, 0.13f, 0.14f);
         return gameObject;
     }
 
