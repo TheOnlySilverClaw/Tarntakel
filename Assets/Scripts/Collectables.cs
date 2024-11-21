@@ -20,7 +20,7 @@ public class Collectables : MonoBehaviour
     public void collected(){
         Destroy(this.gameObject);
         disappearingPart.Play();
-        float playTime = disappearingPart.duration + disappearingPart.startLifetime;
+        float playTime = disappearingPart.totalTime;
         Destroy(disappearingPart.transform.parent.gameObject, playTime);
     }
 }
