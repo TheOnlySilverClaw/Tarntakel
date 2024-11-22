@@ -40,22 +40,26 @@ public class FollowPath : MonoBehaviour
     void FixedUpdate()
     {
 
-        // if(path.Waypoints.Length < 1) return;
+        if(path.Waypoints.Length < 1) return;
 
         if(delay > 0f) {
             delay -= Time.deltaTime;
             return;
         }
 
-        if(path.Waypoints.Length < 2) return;
-
-        if(Vector3.Distance(transform.position, next.transform.position) < tolerance)
+        float speed;
+        if(path.Waypoints.Length == 1)
         {
-            nextWaypoint();
-            return;
+            speed = this.speed;
         }
-        
-        float speed = interpolateCurrentSpeed();
+        else
+        {
+            if(Vector3.Distance(transform.position, next.transform.position) < tolerance)
+            {
+                nextWaypoint();
+            }
+            speed = interpolateCurrentSpeed();
+        }
 
         transform.position = Vector3.MoveTowards(
             transform.position,
