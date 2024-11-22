@@ -24,11 +24,14 @@ public class FollowPath : MonoBehaviour
 
     void Start()
     {
-        if(path.Waypoints.Length == 1) {
+        if(path.Waypoints.Length == 1)
+        {
             last = path.Waypoints[0];
             next = last;
             waypointDistance = 0f;
-        } else if(path.Waypoints.Length > 1) {
+        }
+        else if(path.Waypoints.Length > 1)
+        {
             last = path.Waypoints[^1];
             next = path.Waypoints[0];
             waypointDistance = distance2d(last, next);
@@ -42,7 +45,8 @@ public class FollowPath : MonoBehaviour
 
         if(path.Waypoints.Length < 1) return;
 
-        if(delay > 0f) {
+        if(delay > 0f)
+        {
             delay -= Time.deltaTime;
             return;
         }
@@ -70,7 +74,8 @@ public class FollowPath : MonoBehaviour
         transform.right = transform.position - next.transform.position;
     }
 
-    float interpolateCurrentSpeed() {
+    float interpolateCurrentSpeed()
+    {
         
         float targetDistance = Vector2.Distance(
             next.transform.position, transform.position);
@@ -92,7 +97,8 @@ public class FollowPath : MonoBehaviour
         return this.speed * speedMultiplier;
     }
 
-    void nextWaypoint() {
+    void nextWaypoint()
+    {
         last = next;
         index = (index + 1) % path.Waypoints.Length;
         next = path.Waypoints[index];
