@@ -74,6 +74,10 @@ public class FollowPath : MonoBehaviour
         transform.right = transform.position - next.transform.position;
     }
 
+    void OnPlayerDetected(GameObject player) {
+        delay = 1f;
+    }
+
     float interpolateCurrentSpeed()
     {
         

@@ -25,7 +25,7 @@ public class DetectPlayer : MonoBehaviour
         GameObject target = collider.gameObject;
         if(target.tag == "Player") {
             GameObject parent = transform.parent.gameObject;
-            parent.SendMessage("FollowPlayer", target);
+            parent.SendMessage("OnPlayerDetected", target, SendMessageOptions.DontRequireReceiver);
         }
         changeColor(1f);
     }
@@ -35,7 +35,7 @@ public class DetectPlayer : MonoBehaviour
         GameObject target = collider.gameObject;
         if(target.tag == "Player") {
             GameObject parent = transform.parent.gameObject;
-            parent.SendMessage("IgnorePlayer");
+            parent.SendMessage("OnPlayerLost", SendMessageOptions.DontRequireReceiver);
         }
         changeColor(0f);
     }
