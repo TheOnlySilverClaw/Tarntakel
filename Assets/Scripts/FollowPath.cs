@@ -51,13 +51,22 @@ public class FollowPath : MonoBehaviour
 
         if(Vector3.Distance(transform.position, next.transform.position) < tolerance)
         {
-            last = next;
-            index = (index + 1) % path.Waypoints.Length;
-            next = path.Waypoints[index];
-            waypointDistance = distance2d(last, next);
-            delay = last.Delay;
+            nextWaypoint();
             return;
         }
+        
+        float speed = interpolateCurrentSpeed();
+
+        transform.position = Vector3.MoveTowards(
+            transform.position,
+            next.transform.position,
+            speed * Time.deltaTime
+        );
+
+        transform.right = transform.position - next.transform.position;
+    }
+
+    float interpolateCurrentSpeed() {
         
         float targetDistance = Vector2.Distance(
             next.transform.position, transform.position);
@@ -67,33 +76,24 @@ public class FollowPath : MonoBehaviour
         float speedMultiplier;
         if(this.last.Speed < this.next.Speed)
         {
-            speedMultiplier = Mathf.SmoothStep(this.last.Speed, this.next.Speed, 1 - relativeDistance);
+            speedMultiplier = Mathf.SmoothStep(
+                this.last.Speed, this.next.Speed, 1 - relativeDistance);
         }
         else
         {
-            speedMultiplier = Mathf.SmoothStep(this.next.Speed, this.last.Speed, relativeDistance);
+            speedMultiplier = Mathf.SmoothStep(
+                this.next.Speed, this.last.Speed, relativeDistance);
         }
 
-        float currentSpeed = this.speed * speedMultiplier;
+        return this.speed * speedMultiplier;
+    }
 
-        transform.position = Vector3.MoveTowards(
-            transform.position,
-            next.transform.position,
-            currentSpeed * Time.deltaTime
-        );
-
-        Vector3 direction = next.transform.position - transform.position;
-        transform.right = direction;
-
-        Vector3 localScale = transform.localScale;
-        if(direction.x < 0) {
-            localScale.x = 1;
-            transform.Rotate(0f, 0f, 180f);
-        }
-        if(direction.x > 0){
-            localScale.x = -1;
-        }
-        transform.localScale =localScale;
+    void nextWaypoint() {
+        last = next;
+        index = (index + 1) % path.Waypoints.Length;
+        next = path.Waypoints[index];
+        waypointDistance = distance2d(last, next);
+        delay = last.Delay;
     }
 
     float distance2d(Waypoint a, Waypoint b)
