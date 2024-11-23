@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 232625103}
   - component: {fileID: 232625102}
   m_Layer: 0
-  m_Name: SceneManager
+  m_Name: SceneLoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -289,7 +289,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 110b5199a67e2fb46a1eac81f6251f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneIndex: 1
 --- !u!4 &232625103
 Transform:
   m_ObjectHideFlags: 0
@@ -2254,7 +2253,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 232625102}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_MethodName: LoadLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

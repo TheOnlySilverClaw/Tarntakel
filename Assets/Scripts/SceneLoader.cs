@@ -5,11 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    [SerializeField]
-    private int _sceneIndex;
 
-    public void LoadScene()
+    public void LoadMainMenu()
     {
-        SceneManager.LoadScene(_sceneIndex);
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void LoadWinScreen() {
+        SceneManager.LoadScene("WinScreen");
+    }
+
+    public void LoadLevel()
+    {
+        SceneManager.LoadScene("GameJam");
     }
 }
