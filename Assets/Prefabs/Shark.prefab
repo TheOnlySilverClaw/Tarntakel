@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 143237505844634239}
   - component: {fileID: 7173446464498050213}
   m_Layer: 0
-  m_Name: SharkSprite
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 7293932710973881544}
   - component: {fileID: 3258345853310882741}
   m_Layer: 0
-  m_Name: SharkViewCone
+  m_Name: ViewCone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

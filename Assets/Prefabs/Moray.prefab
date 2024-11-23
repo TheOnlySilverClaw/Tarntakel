@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 3658910133210988290}
   - component: {fileID: 525665232533856846}
   m_Layer: 0
-  m_Name: MorayViewCone
+  m_Name: ViewCone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -541,7 +541,7 @@ GameObject:
   - component: {fileID: 6587281069335406466}
   - component: {fileID: 9004444927999020262}
   m_Layer: 0
-  m_Name: MoraySprite
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
