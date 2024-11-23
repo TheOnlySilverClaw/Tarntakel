@@ -191,7 +191,7 @@ Transform:
   m_GameObject: {fileID: 1456025368206391779}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.45, y: -0.3, z: 0}
+  m_LocalPosition: {x: -1, y: -0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -256,7 +256,6 @@ GameObject:
   - component: {fileID: 348511058416841822}
   - component: {fileID: 179018667641125983}
   - component: {fileID: 2976218188523564575}
-  - component: {fileID: 2241280789411065336}
   m_Layer: 0
   m_Name: Shark
   m_TagString: Untagged
@@ -296,7 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: {fileID: 0}
-  speed: 4
+  speed: 5
   tolerance: 1
 --- !u!114 &179018667641125983
 MonoBehaviour:
@@ -310,7 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6de339ae4a74374399bc44e1520da267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 7
 --- !u!114 &2976218188523564575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,18 +320,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c7216248ee334e4b804e38a04f5c43a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2241280789411065336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4824884764868426655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b20da7b328023eda5aacc9f22de8bc1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7226476907263934992

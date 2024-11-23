@@ -363,7 +363,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1263041227500000214}
-  - component: {fileID: 6570202372242185167}
+  - component: {fileID: 2437609798740807357}
+  - component: {fileID: 5090108942663591751}
   m_Layer: 0
   m_Name: Penguin
   m_TagString: Untagged
@@ -389,7 +390,7 @@ Transform:
   - {fileID: 8026287414280714540}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6570202372242185167
+--- !u!114 &2437609798740807357
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -398,69 +399,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 8627558361600941779}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bea7acb862f754e40bc791cf5b92d456, type: 3}
+  m_Script: {fileID: 11500000, guid: cb5348f1445d1974c98c31684e6f1367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  timeBetweenActions: 2.5
-  speedRange:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 15
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 15
-      inSlope: -2.5
-      outSlope: -2.5
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 2
-      value: 10
-      inSlope: -4
-      outSlope: -4
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 3
-      value: 7
-      inSlope: -2.5
-      outSlope: -2.5
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 4
-      value: 5
-      inSlope: -2
-      outSlope: -2
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 1
-    m_RotationOrder: 4
-  waypointIndex: 0
-  _bubbles: {fileID: 3381103551513381937}
+  path: {fileID: 0}
+  speed: 5
+  tolerance: 0.5
+--- !u!114 &5090108942663591751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8627558361600941779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6de339ae4a74374399bc44e1520da267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 7
 --- !u!1001 &8882078180294277998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -674,11 +631,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3f612b25a30be14c97a18434c0f9d04, type: 3}
---- !u!198 &3381103551513381937 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 6174273253070370655, guid: b3f612b25a30be14c97a18434c0f9d04, type: 3}
-  m_PrefabInstance: {fileID: 8882078180294277998}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8026287414280714540 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1450267843128181314, guid: b3f612b25a30be14c97a18434c0f9d04, type: 3}

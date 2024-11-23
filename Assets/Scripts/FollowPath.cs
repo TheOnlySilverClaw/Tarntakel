@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using static DirectionHelper;
+
 public class FollowPath : MonoBehaviour
 {
     [SerializeField]
@@ -71,11 +73,12 @@ public class FollowPath : MonoBehaviour
             speed * Time.deltaTime
         );
 
-        transform.right = transform.position - next.transform.position;
+        Vector2 direction = next.transform.position - transform.position;
+        transform.TurnTowards(direction);
     }
 
     void OnPlayerDetected(GameObject player) {
-        delay = 1f;
+        delay = 0.25f;
     }
 
     float interpolateCurrentSpeed()
