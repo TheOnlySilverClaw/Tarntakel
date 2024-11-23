@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Waypoint : MonoBehaviour
 {
@@ -18,6 +19,14 @@ public class Waypoint : MonoBehaviour
     public float Delay
     {
         get { return delay; }
+    }
+
+    [SerializeField]
+    UnityEvent onReached = null;
+
+    public UnityEvent OnReached
+    {
+        get { return onReached; }
     }
 
     void OnDrawGizmos()

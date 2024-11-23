@@ -62,6 +62,7 @@ public class FollowPath : MonoBehaviour
         {
             if(Vector3.Distance(transform.position, next.transform.position) < tolerance)
             {
+                next.OnReached?.Invoke();
                 nextWaypoint();
             }
             speed = interpolateCurrentSpeed();
