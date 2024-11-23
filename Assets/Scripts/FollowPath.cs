@@ -78,7 +78,8 @@ public class FollowPath : MonoBehaviour
         transform.TurnTowards(direction);
     }
 
-    void OnPlayerDetected(GameObject player) {
+    void OnPlayerDetected(GameObject player)
+    {
         delay = 0.25f;
     }
 

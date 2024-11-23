@@ -16,8 +16,8 @@ public class HideViewCone : MonoBehaviour
 
     bool hiding;
 
-    void FixedUpdate() {
-
+    void FixedUpdate()
+    {
         float change = hideSpeed * Time.deltaTime;
 
         Color color = spriteRenderer.color;

@@ -9,8 +9,10 @@ public class Fade : MonoBehaviour
 {
     [SerializeField]
     private Image _image;
+
     [SerializeField]
     private TextMeshProUGUI _text;
+    
     [SerializeField]
     private float _fadeSpeed;
 

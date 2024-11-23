@@ -8,19 +8,23 @@ public class HueShift : MonoBehaviour
 {
     [SerializeField]
     private float _hueShiftSpeed = 0.01f;
+    
     [SerializeField]
     private SpriteRenderer _spriteRenderer;
+
     [SerializeField]
     private Collider2D _collider;
 
     public UnityEvent<float> OnUpdate;
 
     private float _currentHueIntent;
+
     [SerializeField]
     private float _currentHue;
 
     [SerializeField]
     private AnimationCurve _visibility;
+
     [SerializeField]
     private FloatAttribute _deviation;
 
@@ -78,8 +82,8 @@ public class HueShift : MonoBehaviour
         _currentHidingSpot = null;
     }
 
-    void UpdateHue() {
-
+    void UpdateHue()
+    {
         ClampCurrentHue();
         
         OnUpdate?.Invoke(_currentHue);
@@ -107,12 +111,13 @@ public class HueShift : MonoBehaviour
         _currentHue += _currentHueIntent * _hueShiftSpeed * Time.deltaTime;
     }
 
-    private void RandomizeCurrentHue() {
+    private void RandomizeCurrentHue()
+    {
         _currentHue += Random.value * 0.4f + 0.2f;
     }
 
-    private void ClampCurrentHue() {
-        
+    private void ClampCurrentHue()
+    {
         if (_currentHue > 1f)
         {
             _currentHue -= 1f;

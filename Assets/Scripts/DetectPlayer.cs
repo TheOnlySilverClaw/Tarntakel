@@ -20,26 +20,31 @@ public class DetectPlayer : MonoBehaviour
         transform.localScale = new Vector3(x, y, 1f);
     }
 
-    void OnTriggerStay2D(Collider2D collider) {
-        
+    void OnTriggerStay2D(Collider2D collider)
+    {    
         GameObject target = collider.gameObject;
-        if(target.tag == "Player") {
+        if(target.tag == "Player")
+        {
             GameObject parent = transform.parent.gameObject;
             parent.SendMessage("OnPlayerDetected", target, SendMessageOptions.DontRequireReceiver);
             changeColor(1f);
         }
     }
 
-    void OnTriggerExit2D(Collider2D collider) {
+    void OnTriggerExit2D(Collider2D collider)
+    {
 
         GameObject target = collider.gameObject;
-        if(target.tag == "Player") {
+        if(target.tag == "Player")
+        {
             GameObject parent = transform.parent.gameObject;
             parent.SendMessage("OnPlayerLost", SendMessageOptions.DontRequireReceiver);
             changeColor(0f);
         }
     }
-    private void changeColor(float Saturation){
+    
+    void changeColor(float Saturation)
+    {
         Color color = gameObject.GetComponent<SpriteRenderer>().color;
         color = Color.HSVToRGB(0f, Saturation, 1f);
         color.a = 0.5f;

@@ -8,10 +8,13 @@ public class Movement : MonoBehaviour
 {
     [SerializeField]
     private float _movementSpeed;
+
     [SerializeField]
     private Animator _animator;
+
     [SerializeField]
     private Rigidbody2D _rigidbody;
+
     private bool facingLeft;
 
     /// <summary>
@@ -19,14 +22,7 @@ public class Movement : MonoBehaviour
     /// </summary>
     private Vector2 _movementIntent;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    private void Update()
+    void Update()
     {
         bool isMoving = _movementIntent.sqrMagnitude > 0.1f;
         _animator.SetBool("isMoving", isMoving);
@@ -51,12 +47,15 @@ public class Movement : MonoBehaviour
         _movementIntent = context.ReadValue<Vector2>();
     }
 
-    private void orientation(){
+    private void orientation()
+    {
         Vector3 scale = transform.localScale;
-        if(!facingLeft && _movementIntent.x < 0){
+        if(!facingLeft && _movementIntent.x < 0)
+        {
             scale.x *= -1;
             facingLeft = true;}
-        if(facingLeft && _movementIntent.x > 0){
+        if(facingLeft && _movementIntent.x > 0)
+        {
             scale.x *= -1;
             facingLeft = false;}
         transform.localScale = scale;

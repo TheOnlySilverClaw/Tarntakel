@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class ClawAttack : MonoBehaviour
 {
-    void OnCollisionEnter2D(Collision2D collision) {
-        
+    void OnCollisionEnter2D(Collision2D collision)
+    {    
         GameObject target = collision.gameObject;
-        if(target.tag == "Player") {
+        if(target.tag == "Player")
+        {
             target.SendMessage("Panic", gameObject);
         }
     }

@@ -6,8 +6,10 @@ public class HueShiftDemo : MonoBehaviour
 {
     [SerializeField]
     private SpriteRenderer _spriteRenderer;
+    
     [SerializeField]
     private float _hueChangingSpeed = 0.5f;
+
     [SerializeField]
     private float _currentHue = 0f;
 

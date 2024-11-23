@@ -10,6 +10,7 @@ public class SliderUi : MonoBehaviour
 
     [SerializeField]
     private RectTransform _handle;
+    
     [SerializeField]
     private Image _sliderImage;
 

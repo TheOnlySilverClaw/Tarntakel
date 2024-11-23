@@ -12,12 +12,14 @@ public class Collectables : MonoBehaviour
         Exit.Instance.Register();
     }
 
-    void OnTriggerEnter2D(Collider2D other){
+    void OnTriggerEnter2D(Collider2D other)
+    {
         Exit.Instance.Collect();
         collected();
     }
 
-    public void collected(){
+    public void collected()
+    {
         Destroy(this.gameObject);
         disappearingPart.Play();
         float playTime = disappearingPart.totalTime;

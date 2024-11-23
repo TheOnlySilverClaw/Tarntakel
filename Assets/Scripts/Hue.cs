@@ -28,15 +28,8 @@ public class Hue : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         Color.RGBToHSV(_spriteRenderer.color, out _hueOffset, out _, out _);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
