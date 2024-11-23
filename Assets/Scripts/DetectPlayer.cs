@@ -26,8 +26,8 @@ public class DetectPlayer : MonoBehaviour
         if(target.tag == "Player") {
             GameObject parent = transform.parent.gameObject;
             parent.SendMessage("OnPlayerDetected", target, SendMessageOptions.DontRequireReceiver);
+            changeColor(1f);
         }
-        changeColor(1f);
     }
 
     void OnTriggerExit2D(Collider2D collider) {
@@ -36,8 +36,8 @@ public class DetectPlayer : MonoBehaviour
         if(target.tag == "Player") {
             GameObject parent = transform.parent.gameObject;
             parent.SendMessage("OnPlayerLost", SendMessageOptions.DontRequireReceiver);
+            changeColor(0f);
         }
-        changeColor(0f);
     }
     private void changeColor(float Saturation){
         Color color = gameObject.GetComponent<SpriteRenderer>().color;
