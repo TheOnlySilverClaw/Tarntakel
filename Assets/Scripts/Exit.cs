@@ -49,7 +49,7 @@ public class Exit : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Movement movement = collision.GetComponent<Movement>();
-        if (movement != null && _collectables == 1)
+        if (movement != null && _collectables == _maxCollectables)
         {
             OnWin?.Invoke();
         }
