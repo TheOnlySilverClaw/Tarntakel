@@ -12,4 +12,8 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene(_sceneIndex);
     }
+    
+    public void selectLevel(int level){
+        _sceneIndex = level;
+    }
 }
