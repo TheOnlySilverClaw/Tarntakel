@@ -3141,10 +3141,6 @@ PrefabInstance:
       value: Level 1
       objectReference: {fileID: 0}
     - target: {fileID: 3810487869265101059, guid: e31c5adcbfeebac4ca1b4721edce969a, type: 3}
-      propertyPath: speed
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 3810487869265101059, guid: e31c5adcbfeebac4ca1b4721edce969a, type: 3}
       propertyPath: Buttons
       value: 
       objectReference: {fileID: 212393217}
